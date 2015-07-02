@@ -96,12 +96,12 @@
 		BF59047D1B45D6B1004A5063 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				BF5904731B45D64F004A5063 /* PlayerServer.cpp */,
-				BF5904761B45D66C004A5063 /* GameServer.cpp */,
 				BF5904771B45D66C004A5063 /* GameServer.h */,
-				BF5904741B45D64F004A5063 /* PlayerServer.h */,
-				BF5904791B45D68B004A5063 /* MapServer.cpp */,
+				BF5904761B45D66C004A5063 /* GameServer.cpp */,
 				BF59047A1B45D68B004A5063 /* MapServer.h */,
+				BF5904791B45D68B004A5063 /* MapServer.cpp */,
+				BF5904741B45D64F004A5063 /* PlayerServer.h */,
+				BF5904731B45D64F004A5063 /* PlayerServer.cpp */,
 			);
 			name = Server;
 			sourceTree = "<group>";
@@ -342,6 +342,7 @@
 				BF59046F1B45D555004A5063 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

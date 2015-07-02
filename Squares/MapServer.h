@@ -11,4 +11,9 @@
 
 #include <iostream>
 
+class MapServer {
+private:
+    
+}
+
 #endif /* defined(__Squares__MapServer__) */
