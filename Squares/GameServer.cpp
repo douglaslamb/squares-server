@@ -8,4 +8,23 @@
 
 #include "GameServer.h"
 
-Class 
+GameServer::GameServer(MapServer &map) {
+    m_map = &map;
+    run();
+}
+
+void GameServer::run() {
+    while (true) {
+        sf::Time elapsed = clock.restart();
+        update();
+    }
+}
+
+void GameServer::update() {
+    // what to do in update
+    // I need to get keypresses and move all squares
+    // and update positions of squares
+    
+}
+
+

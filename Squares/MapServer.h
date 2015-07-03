@@ -10,10 +10,18 @@
 #define __Squares__MapServer__
 
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 class MapServer {
 private:
+    double m_length;
+    double m_width;
+    sf::Color m_color;
     
-}
+public:
+    MapServer(double length, double width);
+    sf::Color getColor();
+
+};
 
 #endif /* defined(__Squares__MapServer__) */

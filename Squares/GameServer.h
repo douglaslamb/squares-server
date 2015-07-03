@@ -10,6 +10,8 @@
 #define __Squares__GameServer__
 
 #include <iostream>
+#include <SFML/Graphics.hpp>
+#include "MapServer.h"
 #include "PlayerServer.h"
 
 class GameServer {
@@ -25,8 +27,8 @@ private:
     // updates game logic and pushes updates to clients
     
 public:
-    GameServer(MapServer map);
+    GameServer(MapServer &map);
     
-}
+};
 
 #endif /* defined(__Squares__GameServer__) */

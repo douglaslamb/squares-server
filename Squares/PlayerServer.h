@@ -10,23 +10,25 @@
 #define __Squares__PlayerServer__
 
 #include <iostream>
+#include <SFML/Graphics.hpp>
 
 class PlayerServer {
 private:
     double m_x;
     double m_y;
     
-    sf::Color *color;
+    sf::Color m_color;
     
 public:
-    float getX();
-    void setX(float x);
+    PlayerServer();
+    
+    double getX();
+    void setX(double x);
     double getY();
-    void setY(float y);
+    void setY(double y);
     sf::Color getColor();
-    void setColor(sf::Color c);
+    void setColor(sf::Color color);
     void move(double x, double y);
-    // void shoot(); leave it out for now
-}
+};
 
 #endif /* defined(__Squares__PlayerServer__) */

@@ -7,3 +7,13 @@
 //
 
 #include "MapServer.h"
+
+MapServer::MapServer(double length, double width) {
+    m_length = length;
+    m_width = width;
+    m_color = sf::Color(255, 255, 255);
+}
+
+sf::Color MapServer::getColor() {
+    return m_color;
+}
