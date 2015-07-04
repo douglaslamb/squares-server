@@ -8,6 +8,11 @@
 
 #include "MapServer.h"
 
+MapServer::MapServer() {
+    m_length = 0;
+    m_width = 0;
+    m_color = sf::Color(255, 255, 255);
+}
 MapServer::MapServer(double length, double width) {
     m_length = length;
     m_width = width;

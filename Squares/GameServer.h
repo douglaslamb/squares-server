@@ -13,21 +13,25 @@
 #include <SFML/Graphics.hpp>
 #include "MapServer.h"
 #include "PlayerServer.h"
+#include "GameClient.h"
 
 class GameServer {
+    
 private:
     PlayerServer *m_players[12];
     GameClient *m_clients[12];
     MapServer m_map;
     sf::Clock m_clock;
     
-    void run();
-    // contains the game loop
     void update();
     // updates game logic and pushes updates to clients
     
 public:
-    GameServer(MapServer &map);
+    GameServer();
+    GameServer(MapServer map);
+    
+    void run();
+    // contains the game loop
     
 };
 

@@ -8,9 +8,12 @@
 
 #include "GameServer.h"
 
-GameServer::GameServer(MapServer &map) {
-    m_map = &map;
-    run();
+GameServer::GameServer() {
+    m_map = MapServer();
+}
+
+GameServer::GameServer(MapServer map) {
+    m_map = map;
 }
 
 void GameServer::run() {

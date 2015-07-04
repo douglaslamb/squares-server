@@ -19,6 +19,8 @@ private:
     sf::Color m_color;
     
 public:
+    
+    MapServer();
     MapServer(double length, double width);
     sf::Color getColor();
 

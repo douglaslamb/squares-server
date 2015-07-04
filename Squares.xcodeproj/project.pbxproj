@@ -15,6 +15,7 @@
 		BF5904811B45D6DD004A5063 /* GameClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF59047F1B45D6DD004A5063 /* GameClient.cpp */; };
 		BF5904841B45D6E6004A5063 /* PlayerClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5904821B45D6E6004A5063 /* PlayerClient.cpp */; };
 		BF5904871B45D6EC004A5063 /* MapClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5904851B45D6EC004A5063 /* MapClient.cpp */; };
+		BFEB697B1B471B5A00869149 /* ClientMove.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BFEB69791B471B5A00869149 /* ClientMove.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		BF5904831B45D6E6004A5063 /* PlayerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerClient.h; sourceTree = "<group>"; };
 		BF5904851B45D6EC004A5063 /* MapClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapClient.cpp; sourceTree = "<group>"; };
 		BF5904861B45D6EC004A5063 /* MapClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapClient.h; sourceTree = "<group>"; };
+		BFEB69791B471B5A00869149 /* ClientMove.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClientMove.cpp; path = ../ClientMove.cpp; sourceTree = "<group>"; };
+		BFEB697A1B471B5A00869149 /* ClientMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClientMove.h; path = ../ClientMove.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 		BF59045A1B45D555004A5063 /* Squares */ = {
 			isa = PBXGroup;
 			children = (
+				BFEB69791B471B5A00869149 /* ClientMove.cpp */,
+				BFEB697A1B471B5A00869149 /* ClientMove.h */,
 				BF59045D1B45D555004A5063 /* ResourcePath.mm */,
 				BF59045F1B45D555004A5063 /* ResourcePath.hpp */,
 				BF5904601B45D555004A5063 /* main.cpp */,
@@ -205,6 +210,7 @@
 				BF5904811B45D6DD004A5063 /* GameClient.cpp in Sources */,
 				BF5904841B45D6E6004A5063 /* PlayerClient.cpp in Sources */,
 				BF5904871B45D6EC004A5063 /* MapClient.cpp in Sources */,
+				BFEB697B1B471B5A00869149 /* ClientMove.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
