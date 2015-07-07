@@ -11,19 +11,24 @@
 
 #include <iostream>
 #include <SFML/Network.hpp>
+#include "PlayerServer.h"
 
 class ClientMove {
     
 private:
-    int m_x;
-    int m_y;
-    int m_clientID;
+    sf::Int32 m_x;
+    sf::Int32 m_y;
+    sf::Int32 m_clientID;
     
 public:
     ClientMove();
-    ClientMove(int x, int y, int clientID);
+    ClientMove(sf::Int32 x, sf::Int32 y, sf::Int32 clientID);
+    
+    sf::Int32 getX();
+    sf::Int32 getY();
+    sf::Int32 getClientID();
 
-    void execute();
+    void execute(PlayerServer players[]);
 };
 
 #endif /* defined(__Squares__ClientMove__) */

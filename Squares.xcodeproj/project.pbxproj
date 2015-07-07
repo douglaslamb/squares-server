@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1044821B4876DE0001080C /* NetworkServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF1044801B4876DE0001080C /* NetworkServer.cpp */; };
 		BF59045E1B45D555004A5063 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF59045D1B45D555004A5063 /* ResourcePath.mm */; };
 		BF5904611B45D555004A5063 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5904601B45D555004A5063 /* main.cpp */; };
 		BF5904751B45D64F004A5063 /* PlayerServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF5904731B45D64F004A5063 /* PlayerServer.cpp */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF1044801B4876DE0001080C /* NetworkServer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NetworkServer.cpp; path = ../NetworkServer.cpp; sourceTree = "<group>"; };
+		BF1044811B4876DE0001080C /* NetworkServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkServer.h; path = ../NetworkServer.h; sourceTree = "<group>"; };
 		BF5904581B45D555004A5063 /* Squares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF59045C1B45D555004A5063 /* Squares-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Squares-Info.plist"; sourceTree = "<group>"; };
 		BF59045D1B45D555004A5063 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
@@ -101,6 +104,8 @@
 		BF59047D1B45D6B1004A5063 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				BF1044801B4876DE0001080C /* NetworkServer.cpp */,
+				BF1044811B4876DE0001080C /* NetworkServer.h */,
 				BF5904771B45D66C004A5063 /* GameServer.h */,
 				BF5904761B45D66C004A5063 /* GameServer.cpp */,
 				BF59047A1B45D68B004A5063 /* MapServer.h */,
@@ -211,6 +216,7 @@
 				BF5904841B45D6E6004A5063 /* PlayerClient.cpp in Sources */,
 				BF5904871B45D6EC004A5063 /* MapClient.cpp in Sources */,
 				BFEB697B1B471B5A00869149 /* ClientMove.cpp in Sources */,
+				BF1044821B4876DE0001080C /* NetworkServer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,16 +18,15 @@ GameServer::GameServer(MapServer map) {
 
 void GameServer::run() {
     while (true) {
-        sf::Time elapsed = clock.restart();
-        update();
+        sf::Time elapsed = m_clock.restart();
+        update(elapsed);
     }
 }
 
-void GameServer::update() {
-    // what to do in update
-    // I need to get keypresses and move all squares
-    // and update positions of squares
-    
+void GameServer::update(sf::Time elapsed) {
+    // 1. execute pending commands
+    // 2. accept pending connection requests and create the player object
+    // 3. send updates to clients (probably do that last)
 }
 
 

@@ -14,14 +14,21 @@ ClientMove::ClientMove() {
     m_clientID = 0;
 }
 
-ClientMove::ClientMove(int x, int y, int clientID) {
+ClientMove::ClientMove(sf::Int32 x, sf::Int32 y, sf::Int32 clientID) {
     m_x = x;
     m_y = y;
     m_clientID = clientID;
 }
 
-void ClientMove::execute() {
-    // probably put the array of player objects in as an argument to execute, probably?
-    // because I will be calling move on one of those objects
+sf::Int32 ClientMove::getX() {return m_x;}
+sf::Int32 ClientMove::getY() {return m_y;}
+sf::Int32 ClientMove::getClientID() {return m_clientID;}
+
+void ClientMove::execute(PlayerServer players[]) {
+    players[m_clientID].move(m_x, m_y);
 }
+
+
+
+
 

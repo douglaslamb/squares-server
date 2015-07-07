@@ -16,6 +16,7 @@ class PlayerServer {
 private:
     double m_x;
     double m_y;
+    double m_speed;
     
     sf::Color m_color;
     
@@ -28,7 +29,7 @@ public:
     void setY(double y);
     sf::Color getColor();
     void setColor(sf::Color color);
-    void move(double x, double y);
+    void move(int x, int y);
 };
 
 #endif /* defined(__Squares__PlayerServer__) */
