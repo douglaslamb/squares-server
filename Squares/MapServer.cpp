@@ -19,6 +19,28 @@ MapServer::MapServer(double length, double width) {
     m_color = sf::Color(255, 255, 255);
 }
 
-sf::Color MapServer::getColor() {
+double MapServer::getLength() const {
+    return m_length;
+}
+
+void MapServer::setLength(double length) {
+    m_length = length;
+}
+
+double MapServer::getWidth() const {
+    return m_width;;
+}
+
+void MapServer::setWidth(double width) {
+    m_width = width;
+}
+
+sf::Color MapServer::getColor() const {
     return m_color;
 }
+
+void MapServer::setColor(sf::Color color) {
+    m_color = color;
+}
+
+

@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 
 class PlayerServer {
 private:
@@ -23,13 +24,19 @@ private:
 public:
     PlayerServer();
     
-    double getX();
+    double getX() const;
     void setX(double x);
-    double getY();
+    double getY() const;
     void setY(double y);
-    sf::Color getColor();
+    double getSpeed() const;
+    void setSpeed(double speed);
+    sf::Color getColor() const;
     void setColor(sf::Color color);
     void move(int x, int y);
 };
+
+sf::Packet& operator <<(sf::Packet& packet, const PlayerServer& player);
+sf::Packet& operator >>(sf::Packet& packet, PlayerServer& player);
+
 
 #endif /* defined(__Squares__PlayerServer__) */

@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Network.hpp>
 
 class MapServer {
 private:
@@ -22,8 +23,16 @@ public:
     
     MapServer();
     MapServer(double length, double width);
-    sf::Color getColor();
-
+    
+    double getLength() const;
+    void setLength(double length);
+    double getWidth() const;
+    void setWidth(double width);
+    sf::Color getColor() const;
+    void setColor(sf::Color color);
 };
+
+sf::Packet& operator <<(sf::Packet& packet, const MapServer& player);
+sf::Packet& operator >>(sf::Packet& packet, MapServer& player);
 
 #endif /* defined(__Squares__MapServer__) */

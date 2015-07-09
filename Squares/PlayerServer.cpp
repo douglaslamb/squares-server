@@ -15,7 +15,7 @@ PlayerServer::PlayerServer() {
     m_color = sf::Color(100, 250, 50);
 }
 
-double PlayerServer::getX() {
+double PlayerServer::getX() const {
     return m_x;
 }
 
@@ -23,7 +23,7 @@ void PlayerServer::setX(double x) {
     m_x = x;
 }
 
-double PlayerServer::getY() {
+double PlayerServer::getY() const {
     return m_y;
 }
 
@@ -31,7 +31,15 @@ void PlayerServer::setY(double y) {
     m_y = y;
 }
 
-sf::Color PlayerServer::getColor() {
+double PlayerServer::getSpeed() const {
+    return m_speed;
+}
+
+void PlayerServer::setSpeed(double speed) {
+    m_speed = speed;
+}
+
+sf::Color PlayerServer::getColor() const {
     return m_color;
 }
 
@@ -44,4 +52,21 @@ void PlayerServer::move(int x, int y) {
     m_y = m_y + (y * m_speed);
 }
 
+sf::Packet& operator <<(sf::Packet& packet, const PlayerServer& player) {
+    return packet << player.getX() << player.getY() << player.getSpeed() << player.getColor().r << player.getColor().g << player.getColor().b;
+}
 
+sf::Packet& operator >>(sf::Packet& packet, PlayerServer& player) {
+    double x;
+    double y;
+    double speed;
+    sf::Uint8 r;
+    sf::Uint8 g;
+    sf::Uint8 b;
+    
+    packet >> x >> y >> speed >> r >> g >> b;
+    player.setX(x);
+    player.setY(y);
+    player.setSpeed(speed);
+    player.setColor(sf::Color(r, g, b));
+}

@@ -19,7 +19,6 @@ class GameServer {
     
 private:
     PlayerServer m_players[12];
-    GameClient m_clients[12];
     MapServer m_map;
     sf::Clock m_clock;
     
