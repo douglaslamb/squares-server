@@ -32,7 +32,7 @@ public:
     void setSpeed(double speed);
     sf::Color getColor() const;
     void setColor(sf::Color color);
-    void move(int x, int y);
+    void move(sf::Int32 x, sf::Int32 y);
 };
 
 sf::Packet& operator <<(sf::Packet& packet, const PlayerServer& player);

@@ -8,11 +8,11 @@
 
 #include "GameServer.h"
 
-GameServer::GameServer() {
+GameServer::GameServer() : m_network(m_players, m_map){
     m_map = MapServer();
 }
 
-GameServer::GameServer(MapServer map) {
+GameServer::GameServer(MapServer map) : m_network(m_players, m_map){
     m_map = map;
 }
 
@@ -24,9 +24,15 @@ void GameServer::run() {
 }
 
 void GameServer::update(sf::Time elapsed) {
-    // 1. execute pending commands
-    // 2. accept pending connection requests and create the player object
-    // 3. send updates to clients (probably do that last)
+    // 1. make the network update
+    m_network.update();
+    
+    // 2. execute pending moves
+    std::queue<ClientMove> moves = m_network.getMoves();
+    if (!moves.empty()) {
+        moves.front().execute(m_players);
+        moves.pop();
+    }
 }
 
 

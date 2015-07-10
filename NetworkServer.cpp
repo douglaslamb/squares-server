@@ -8,9 +8,12 @@
 
 #include "NetworkServer.h"
 
+NetworkServer::NetworkServer() {
+};
+
 NetworkServer::NetworkServer(PlayerServer players[12], MapServer map) {
     *m_players = players;
-    *m_map = map;
+    m_map = map;
     socket.bind(26000);
     socket.setBlocking(false);
 }
@@ -20,7 +23,7 @@ void NetworkServer::update() {
     broadcastUpdate();
 }
 
-std::queue<ClientMove> NetworkServer::getMoves() {
+std::queue<ClientMove>& NetworkServer::getMoves() {
     return moves;
 }
 
@@ -38,13 +41,12 @@ void NetworkServer::receivePackets() {
         if (opcode == 1) {
             // create connection
             createConnection(senderAddress);
-        } else {
+        } else if (opcode == 2) {
             // put move in moves queue
             ClientMove move;
             packet >> move;
             moves.push(move);
         }
-        packet.clear();
     }
 }
 
@@ -54,17 +56,20 @@ void NetworkServer::createConnection(sf::IpAddress address) {
     // and put a new PlayerServer there
     
     sf::Int8 clientID = 0;
-    while (m_players[clientID] != NULL) {
+    /* while (m_players[clientID] != NULL) {
         clientID++;
     }
-    m_players[clientID] = new PlayerServer();
+     ill fix this but I needed to take this out to test
+    */
+    PlayerServer player;
+    m_players[clientID] = &player;
     
     // put their ip in the ip array
     
     m_addresses[clientID] = address;
     
     // 2. send a packet back to client to create a new game
-    // send the opcode and the array of players and the map to the client
+    // send the opcode and the map to the client
     
     // opcodes
     // 1 - create game
@@ -72,17 +77,22 @@ void NetworkServer::createConnection(sf::IpAddress address) {
     
     sf::Packet packet;
     sf::Int8 opcode = 1;
-    packet << opcode << *m_players << *m_map;
+    packet << opcode << clientID;
     socket.send(packet, address, 26000);
 }
 
 void NetworkServer::broadcastUpdate() {
     sf::Packet packet;
     sf::Int8 opcode = 2;
-    packet << opcode << *m_players;
+    packet << opcode;
+    for (int i = 0; i < 12; i++) {
+        if (m_players[i] != NULL) {
+            packet << m_players[i]->getX() << m_players[i]->getY();
+        }
+    }
 
     for (int i = 0; i < 12; i++) {
-        if (m_addresses[i] != NULL) {
+        if (m_addresses[i] != sf::IpAddress::None) {
             socket.send(packet, m_addresses[i], 26000);
         }
     }

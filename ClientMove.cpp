@@ -36,7 +36,7 @@ void ClientMove::setY(sf::Int32 y) {
     m_y = y;
 }
 
-void ClientMove::execute(PlayerServer players[]) {
+void ClientMove::execute(PlayerServer players[12]) {
     players[m_clientID].move(m_x, m_y);
 }
 

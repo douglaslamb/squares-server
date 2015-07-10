@@ -47,7 +47,7 @@ void PlayerServer::setColor(sf::Color color) {
     m_color = color;
 }
 
-void PlayerServer::move(int x, int y) {
+void PlayerServer::move(sf::Int32 x, sf::Int32 y) {
     m_x = m_x + (x * m_speed);
     m_y = m_y + (y * m_speed);
 }

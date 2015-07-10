@@ -13,11 +13,12 @@
 #include <SFML/Graphics.hpp>
 #include "MapServer.h"
 #include "PlayerServer.h"
-#include "GameClient.h"
+#include "NetworkServer.h"
 
 class GameServer {
     
 private:
+    NetworkServer m_network;
     PlayerServer m_players[12];
     MapServer m_map;
     sf::Clock m_clock;

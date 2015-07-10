@@ -22,7 +22,7 @@ private:
     std::queue<ClientMove> moves;
     PlayerServer *m_players[12];
     sf::IpAddress m_addresses[12];
-    MapServer *m_map;
+    MapServer m_map;
     sf::UdpSocket socket;
     
     // in receive packet I receive a packet and if it is a move
@@ -36,9 +36,10 @@ private:
     void broadcastUpdate();
     
 public:
+    NetworkServer();
     NetworkServer(PlayerServer players[12], MapServer map);
     void update();
-    std::queue<ClientMove> getMoves();
+    std::queue<ClientMove>& getMoves();
 
 };
 

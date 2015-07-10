@@ -33,6 +33,5 @@ public:
 };
 
 sf::Packet& operator <<(sf::Packet& packet, const MapServer& player);
-sf::Packet& operator >>(sf::Packet& packet, MapServer& player);
 
 #endif /* defined(__Squares__MapServer__) */
