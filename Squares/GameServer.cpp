@@ -8,11 +8,12 @@
 
 #include "GameServer.h"
 
-GameServer::GameServer() : m_network(m_players, m_map){
-    m_map = MapServer();
+GameServer::GameServer() : m_players(12), m_map(), m_network(m_players, m_map) {
+    // m_players.reserve(12);
 }
 
-GameServer::GameServer(MapServer map) : m_network(m_players, m_map){
+GameServer::GameServer(MapServer map) : m_players(12), m_network(m_players, map) {
+    // m_players.reserve(12);
     m_map = map;
 }
 
@@ -28,10 +29,10 @@ void GameServer::update(sf::Time elapsed) {
     m_network.update();
     
     // 2. execute pending moves
-    std::queue<ClientMove> moves = m_network.getMoves();
-    if (!moves.empty()) {
-        moves.front().execute(m_players);
-        moves.pop();
+    while (!m_network.getMoves().empty()) {
+        std::cout << "I execute a move\n";
+        m_network.getMoves().front().execute(m_players);
+        m_network.getMoves().pop();
     }
 }
 

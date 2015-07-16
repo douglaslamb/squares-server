@@ -36,8 +36,10 @@ void ClientMove::setY(sf::Int32 y) {
     m_y = y;
 }
 
-void ClientMove::execute(PlayerServer players[12]) {
-    players[m_clientID].move(m_x, m_y);
+void ClientMove::execute(std::vector<PlayerServer*> players) {
+    std::cout << "ClientMove x and y " << m_x << " " << m_y << "\n";
+    std::cout << "ClientMove clientID " << m_clientID << "\n";
+    players.at(m_clientID)->move(m_x, m_y);
 }
 
 sf::Packet& operator <<(sf::Packet& packet, const ClientMove& move) {

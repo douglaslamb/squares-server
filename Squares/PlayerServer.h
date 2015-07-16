@@ -24,9 +24,9 @@ private:
 public:
     PlayerServer();
     
-    double getX() const;
+    double getX();
     void setX(double x);
-    double getY() const;
+    double getY();
     void setY(double y);
     double getSpeed() const;
     void setSpeed(double speed);

@@ -18,9 +18,9 @@
 class GameServer {
     
 private:
-    NetworkServer m_network;
-    PlayerServer m_players[12];
     MapServer m_map;
+    std::vector<PlayerServer*> m_players;
+    NetworkServer m_network;
     sf::Clock m_clock;
     
     void update(sf::Time elapsed);

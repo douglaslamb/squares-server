@@ -34,7 +34,7 @@ public:
     
     void setY(sf::Int32 y);
     
-    void execute(PlayerServer players[12]);
+    void execute(std::vector<PlayerServer*> players);
 };
 
 sf::Packet& operator <<(sf::Packet& packet, const ClientMove& move);
